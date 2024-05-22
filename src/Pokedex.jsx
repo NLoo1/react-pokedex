@@ -1,10 +1,10 @@
-import './App.css'
-import Pokedex from './Pokedex.jsx'
+import Pokecard from './Pokecard.jsx'
 
-function App() {
-  return <Pokedex />
+function Pokedex(props) {
+  console.log(props)
+  return props.pokemon.map(p => <div><Pokecard props={p} /></div>)
+  // return <h1>Test</h1>
 }
-
 
 Pokedex.defaultProps = {
   pokemon: [
@@ -18,4 +18,5 @@ Pokedex.defaultProps = {
     {id: 133, name: 'Eevee', type: 'normal', base_experience: 65}
   ]
 }
-export default App
+
+export default Pokedex
